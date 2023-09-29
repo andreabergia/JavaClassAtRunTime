@@ -63,7 +63,7 @@ public class ClassGenerator {
                     fieldType = getFieldType(mapEntry.getValue().getClass());
                 }
 
-                cw.visitField(ACC_PUBLIC, fieldName, toFieldDescriptor(fieldType), null, null);
+                cw.visitField(ACC_PUBLIC | ACC_FINAL, fieldName, toFieldDescriptor(fieldType), null, null);
                 fieldTypes.put(fieldName, fieldType);
 
                 // TODO: add jackson annotation JsonProperty
